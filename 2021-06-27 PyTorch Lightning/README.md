@@ -1,6 +1,8 @@
 # Pie & AI: Bangalore - Getting started with PyTorch Lightning
 
-<img src='./banner.jpg' height=500px>
+<img src='./banner.jpg' height=400px>
+
+- [Slides](https://docs.google.com/presentation/d/1k9PZc3UGgMq-irJylPgRufDaJ9mWLGDop9wczeNkxe0/edit?usp=sharing)
 
 > Date and time
 > Sun, June 27, 2021
