@@ -36,4 +36,4 @@ repos:
   rev: 0.4.0
   hooks:
     - id: nbstripout
-      args: ["--max-size 1k"]
+      args: ["--max-size 50k"]
