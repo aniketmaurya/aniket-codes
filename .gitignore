@@ -259,3 +259,6 @@ cython_debug/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/jupyternotebooks,macos,visualstudiocode,python,images
+
+lightning_logs/
+tb_logs/
