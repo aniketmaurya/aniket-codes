@@ -1,3 +1,4 @@
+"""These are just pseudo code used in the slides"""
 import lightning as L
 import torch
 
