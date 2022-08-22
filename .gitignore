@@ -265,3 +265,4 @@ tb_logs/
 *.png
 *tar.gz
 *.zip
+*.xml

@@ -1,5 +1,13 @@
 # Bangpypers meetup
 
+## Steps to build ML API
+
+### Step 1: Create FastAPI Work
+
+### Step 2: Create Rootflow to run the FastAPI Work
+*    Configure layout for swagger UI
+
+
 ## Code Demos used in slides
 
 
