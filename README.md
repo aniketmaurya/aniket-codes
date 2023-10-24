@@ -4,6 +4,7 @@ You can find the code and notebooks I've used in various machine learning, deep 
 
 | Date       | Name                                   |
 |------------|----------------------------------------|
+| 2023-10-24 | MLOps World                          |
 | 2023-10-11 | LLMs-AICamp-London                   |
 | 2022-11-26 | asyncio-bangpypers                   |
 | 2022-8-20  | Bangpypers                            |
