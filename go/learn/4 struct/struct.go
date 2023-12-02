@@ -13,3 +13,7 @@ func newPerson(name string, age int) person {
 func (p *person) updateAge(age int) {
 	p.age = age
 }
+
+func (p *person) updateName(name string) {
+	p.name = name
+}
