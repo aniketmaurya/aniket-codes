@@ -1,3 +1,4 @@
+# vLLM - https://github.com/vllm-project/vllm
 from vllm import LLM, SamplingParams
 import pandas as pd
 import time
@@ -17,7 +18,9 @@ for q in questions:
     t0 = time.perf_counter()
     output = llm.generate(q, sampling_params=sampling_params)[0]
     t1 = time.perf_counter()
-    results.append({"time": t1-t0, "tokens_generated": len(output.outputs[0].token_ids)})
+    results.append(
+        {"time": t1 - t0, "tokens_generated": len(output.outputs[0].token_ids)}
+    )
 
 df = pd.DataFrame(results)
 df.to_csv(f"vllm-benchmark-{tensor_parallel_size}GPUs.csv", index=False)
