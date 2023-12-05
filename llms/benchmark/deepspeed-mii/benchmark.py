@@ -1,9 +1,11 @@
 # deepspeed mii - https://github.com/microsoft/DeepSpeed-MII
 import pandas as pd
 import mii
-from .prompts import questions
+from prompts import questions
+import time
 
 pipe = mii.pipeline("meta-llama/Llama-2-7b-hf")
+output = pipe("This is me warming up the model", max_new_tokens=200)
 
 
 results = []
