@@ -4,6 +4,7 @@ You can find the code and notebooks I've used in various machine learning, deep 
 
 | Date       | Name                                   |
 |------------|----------------------------------------|
+| 2024-01-13 | [HasGeek Workshop: Finetuning LLMs on consumer GPU](https://hasgeek.com/fifthelephant/open-source-ai-hackathon/schedule/fine-tuning-large-language-models-with-custom-dataset-on-consumer-gpus-5MWuWaK4CxPa6HSDCiNrPb) |
 | 2023-10-24 | MLOps World                          |
 | 2023-10-11 | LLMs-AICamp-London                   |
 | 2022-11-26 | asyncio-bangpypers                   |
