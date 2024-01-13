@@ -23,6 +23,7 @@ pip install -r requirements-all.txt
 
 ## Finetuning TinyLlama
 
+**Download weights**
 ```shell
 python scripts/download.py --repo_id TinyLlama/TinyLlama-1.1B-intermediate-step-955k-token-2T
 
@@ -33,4 +34,39 @@ python scripts/convert_hf_checkpoint.py \
 **Test**
 ```
 python chat/base.py --checkpoint_dir checkpoints/TinyLlama/TinyLlama-1.1B-intermediate-step-955k-token-2T
+```
+
+**Prepare Data**
+
+
+**Finetune**
+```
+python finetune/lora.py \
+    --checkpoint_dir checkpoints/TinyLlama/TinyLlama-1.1B-intermediate-step-955k-token-2T \
+    --data_dir data/lima \
+    --out_dir out/lima \
+    --precision bf16-true \
+    --quantize bnb.nf4
+```
+
+**Merge the LoRA weights**
+```
+python scripts/merge_lora.py \
+  --checkpoint_dir "checkpoints/TinyLlama/TinyLlama-1.1B-intermediate-step-955k-token-2T" \
+  --lora_path "out/lora/lima/lit_model_lora_finetuned.pth" \
+  --out_dir "out/lora/lima/"
+```
+
+**Copy the tokenizer files**
+```
+cp checkpoints/TinyLlama/TinyLlama-1.1B-intermediate-step-955k-token-2T/*.json \
+out/lora/lima/
+```
+
+**Evaluation**
+```
+python eval/lm_eval_harness.py \
+  --checkpoint_dir "out/lora/lima/" \
+  --precision "bf16-true" \
+  --save_filepath "results.json"
 ```
