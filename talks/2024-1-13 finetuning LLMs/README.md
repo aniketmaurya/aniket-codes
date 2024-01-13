@@ -2,9 +2,16 @@
 
 ## Training Optimization with FSDP
 
-```
+**Step 1:**
+Run `fsdp/01.py` and observe the GPU memory usage.
 
-```
+
+**Step 2:**
+Distribute the model to multiple GPU. Run `fsdp/02.py`
+
+**Step 3:**
+Use activation checkpointing and observe the GPU memory usage. Run `fsdp/03.py`
+
 
 ## Install Lit-GPT
 
