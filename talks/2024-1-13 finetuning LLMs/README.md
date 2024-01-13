@@ -1,6 +1,7 @@
 # HasGeek Workshop
 
 ## Training Optimization with FSDP
+Resource: [Blog](https://lightning.ai/blog/scaling-large-language-models-with-pytorch-lightning/)
 
 **Step 1:**
 Run `fsdp/01.py` and observe the GPU memory usage.
