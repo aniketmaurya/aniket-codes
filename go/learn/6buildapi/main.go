@@ -9,7 +9,7 @@ import (
 )
 
 type Course struct {
-	CourseId   string `json:"courseId"`
+	Id         string `json:"id"`
 	CourseName string `json:"courseName"`
 }
 
@@ -21,7 +21,7 @@ var courses []Course = []Course{
 }
 
 func (c Course) IsEmpty() bool {
-	return c.CourseId == "" && c.CourseName == ""
+	return c.Id == "" && c.CourseName == ""
 }
 
 const port = ":8500"
@@ -38,11 +38,11 @@ func getAllCourses(w http.ResponseWriter, r *http.Request) {
 
 func getCourseById(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: getCourseById")
-	vars := mux.Vars(r)
-	courseId := vars["courseId"]
-	println(courseId)
+	params := mux.Vars(r)
+	id := params["id"]
+	println(id)
 	for _, course := range courses {
-		if courseId == course.CourseId {
+		if id == course.Id {
 			json.NewEncoder(w).Encode(course)
 			return
 		}
@@ -51,10 +51,11 @@ func getCourseById(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleRequests() {
-	http.HandleFunc("/", helloWorld)
-	http.HandleFunc("/getCourseById", getCourseById)
-	http.HandleFunc("/getAllCourses", getAllCourses)
-	http.ListenAndServe(port, nil)
+	r := mux.NewRouter()
+	r.HandleFunc("/", helloWorld)
+	r.HandleFunc("/getCourseById/{id}", getCourseById)
+	r.HandleFunc("/getAllCourses", getAllCourses)
+	http.ListenAndServe(port, r)
 }
 
 func main() {
