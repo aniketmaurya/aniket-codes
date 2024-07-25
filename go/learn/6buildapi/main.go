@@ -52,9 +52,9 @@ func getCourseById(w http.ResponseWriter, r *http.Request) {
 
 func handleRequests() {
 	r := mux.NewRouter()
-	r.HandleFunc("/", helloWorld)
-	r.HandleFunc("/getCourseById/{id}", getCourseById)
-	r.HandleFunc("/getAllCourses", getAllCourses)
+	r.HandleFunc("/", helloWorld).Methods("GET")
+	r.HandleFunc("/getCourseById/{id}", getCourseById).Methods("GET")
+	r.HandleFunc("/getAllCourses", getAllCourses).Methods("GET")
 	http.ListenAndServe(port, r)
 }
 
